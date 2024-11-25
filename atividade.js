@@ -12,7 +12,8 @@ $(document).ready(function(){
         imagem = $("#imagem").val();
         nome_arq = imagem.substring(12);
         $("#produtos").append(
-            "<ul class='produto' style='border: solid black 1px;'>" +
+         "<div class='produto' style='border: solid black 1px;'>" +
+            "<ul>" +
                 "<li class='image'>" +  
                     "<img src='"+nome_arq+"'>" +
                 "</li>" +   
@@ -21,7 +22,8 @@ $(document).ready(function(){
                 "<li class='tamanho'>" + tamanho + "</li>" + 
                 "<li class='quantidade'>" + quantidade + "</li>" + 
                 "<li><a href=''>Excluir</a></li>" +
-            "</ul>"
+            "</ul>" +
+        "</div>"
         );
     });
 
@@ -33,6 +35,6 @@ $(document).ready(function(){
 
     $("#produtos").on("click", "a", function(event){
         event.preventDefault();
-        $(this).closest("ul").remove();
+        $(this).closest("div").remove();
     });
 });
